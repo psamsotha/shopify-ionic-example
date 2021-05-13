@@ -1,0 +1,46 @@
+.ProductDetailPage {
+  img {
+    max-height: 25rem;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ion-card {
+    text-align: center;
+  }
+}
+
+.ProductDetailPage__info {
+  padding: 16px 16px 0 16px;
+
+  p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
+}
+
+.ProductDetailPage__price {
+  padding: 10px;
+}
+
+.ProductDetailPage__cart-button {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ProductDetailPage__options {
+  button {
+    border-radius: 0 !important;
+    margin: 0;
+  }
+  .selected-variant {
+    background: color($colors, dark);
+    color: color($colors, light);
+  }
+}
+
+.CartAdd__toast {
+  text-align: center;
+}

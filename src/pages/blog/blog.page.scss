@@ -1,0 +1,19 @@
+
+.BlogPage__header {
+  position: relative;
+}
+
+.BlogPage__title {
+  position: absolute;
+  bottom: 0;
+
+  h1 {
+    font-weight: bold;
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
+    font-size: 0.9em;
+  }
+}

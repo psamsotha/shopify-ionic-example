@@ -1,0 +1,16 @@
+
+.ItemUpdateModal {
+  img {
+    max-height: 20rem;
+    object-fit: contain;
+  }
+}
+
+.ItemUpdateModal__item-info {
+  text-align: center;
+}
+
+.ItemUpdateModal__quantity-value {
+  margin: 0 10px;
+  vertical-align: -25%;
+}

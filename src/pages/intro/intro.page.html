@@ -1,0 +1,57 @@
+<ion-header no-border>
+  <ion-navbar color="dark">
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="light">Skip</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/img/intro/sw-logo.png" class="slide-image" />
+      <h2 class="slide-title">
+        Welcome to <b>Stay Winning</b>
+      </h2>
+      <p>
+        At <b>Stay Winning</b> we believe in living a winning a lifestyle. This app promotes things that will help you live your
+        life like we do at Stay Winning.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/intro/headphones.png" class="slide-image" />
+      <h2 class="slide-title">Listen to Music</h2>
+      <p>Listen to our own selected winning <b>Playlist</b> that this updated everyday.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/intro/tools.png" class="slide-image" />
+      <h2 class="slide-title">Life Hacks</h2>
+      <p>Check out our curated list of <b>Life Hacks</b> that will help you win in many other aspects of life.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/intro/shopping-bag.png" class="slide-image" />
+      <h2 class="slide-title">Shop</h2>
+      <p><b>Shop</b> from a wide slection of clothing from Stay Winning and manh other hot brands.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/intro/blog.png" class="slide-image" />
+      <h2 class="slide-title">Blog</h2>
+      <p>View our <b>Blog</b> posts for insights into new ideas that will help you win in life.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/intro/trophy.png" class="slide-image" />
+      <h2 class="slide-title">Ready to Win?</h2>
+      <button ion-button icon-end large clear (click)="startApp()" color="light">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

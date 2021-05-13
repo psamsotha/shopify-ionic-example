@@ -88,7 +88,7 @@ export function cleanProductData(data: IProductData): IProduct {
     images: data.images.edges.map(edge => edge.node),
   };
   // some product variants don't have images,
-  // f.e. hats, which we will just use the
+  // e.g. hats, which we will just use the
   // default product image
   product.variants = data.variants.edges
     .map(edge => edge.node)

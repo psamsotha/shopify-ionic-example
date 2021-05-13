@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Shop</ion-title>
+    <ion-buttons end margin-right>
+      <button class="CartButton__button" ion-button icon-only (click)="goCheckout()">
+        <span class="CartButton__count-badge">{{ shopify.cartItemCount$ | async }}</span>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="ShopPage" padding>
+  <ion-card class="ShopPage__stay-winning">
+    <a (click)="goToVendor({ name: 'STAY WINNING', slug: 'stay-winning'})">
+      <img src="./assets/img/vendors/stay-winning.jpg" />
+    </a>
+  </ion-card>
+  <ion-grid class="ShopPage__vendors">
+    <ion-row>
+      <ion-col col-6 *ngFor="let vendor of vendors">
+        <ion-card>
+          <a (click)="goToVendor(vendor)">
+            <img src="./assets/img/vendors/{{vendor.slug}}.jpg" />
+          </a>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

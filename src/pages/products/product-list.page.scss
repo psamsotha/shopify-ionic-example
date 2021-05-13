@@ -1,0 +1,26 @@
+
+.ProductListPage__vendor-logo {
+  height: 15rem;
+  
+
+  img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+.ProductListPage__item {
+  height: 10rem;
+}
+
+.ProductListPage_item-thumbnail {
+  width: 30%;
+  display: inline-block !important;
+  background: color($colors, dark);
+}
+
+.ProductListPage__item-content {
+  width: 70%;
+  display: inline-block !important;
+}

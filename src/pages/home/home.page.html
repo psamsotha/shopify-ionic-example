@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="HomePage">
+  <ion-card *ngFor="let page of pages" (click)="goToPage(page)">
+    <img src="./assets/img/home/{{page.img}}-bg.png" />
+    <div class="HomePage__card-title">{{page.title}}</div>
+  </ion-card>
+</ion-content>

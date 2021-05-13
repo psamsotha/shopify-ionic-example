@@ -1,0 +1,57 @@
+import slug from 'slug';
+
+export const VENDOR_NAMES = [
+  '1ST CLASS LIVING',
+  'ACRYLICK',
+  'ADAPT',
+  'ALWAYS PREMEDITATED',
+  'ARTISTRY IN MOTION',
+  'BLACK SOX',
+  'BOOGER-KIDS',
+  'BREAKING HEARTS CLOTHING',
+  'BREEZY EXCURSION',
+  'BRULE',
+  'CALI CARTEL',
+  'CITY LEAGUE',
+  'CLUB FOREIGN',
+  'COKE BOYS',
+  'CREEP STREET',
+  'CRYSP DENIM',
+  'CUPCAKE MAFIA',
+  'D9 RESERVE',
+  'DEALERS',
+  'DIEM',
+  'EIGHT & NINE CLOTHING',
+  'EMBELLISH',
+  'ENEMY OF THE STATE',
+  'FAIRPLAY',
+  'FLY SUPPLY',
+  'FOOTWORK',
+  'FREE NATURE',
+  'GODS & GENERALS',
+  'HAUS OF JR',
+  'HAWKE & DUMAR',
+  'HEISMAN LEGENDS',
+  'HIDDEN HYPE',
+  'HIGH RISE',
+  'JACHS NEW YORK',
+  'JUST DON',
+  'K-WAY',
+  'KICKZ',
+  'NEW JACK CITY',
+  'ODD SOX',
+  'OFFICIAL',
+  'OG FUEGO',
+  'PETALS & PEACOCKS',
+  'RANDOM ACCESS',
+  'REASON',
+  'REBEL EIGHT',
+  'RON BASS'
+];
+
+export const VENDORS = VENDOR_NAMES.map(name => {
+  return {
+    name,
+    slug: slug(name.toLowerCase())
+  }
+});

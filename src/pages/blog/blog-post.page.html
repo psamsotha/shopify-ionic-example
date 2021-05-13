@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ post.title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="BlogPostPage">
+  <ion-card>
+    <img [src]="post.img">
+    <div class="BlogPostPage__header">
+      <div class="BlogPostPage__card-title">{{ post.title }}</div>
+      <div class="BlogPostPage__cart-subtitle">{{ post.date | date:'medium' }}</div>
+    </div>
+  </ion-card>
+  <div padding-left padding-right class="BlogPostPage__content" [innerHTML]="post.content" text-justify></div>
+</ion-content>

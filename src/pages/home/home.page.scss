@@ -1,0 +1,17 @@
+
+.HomePage {
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+}
+
+.HomePage__card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px black; 
+}

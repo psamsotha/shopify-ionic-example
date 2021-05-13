@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Item</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="light" showWhen="ios">Cancel</span>
+        <ion-icon name="ion-close" color="light" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ItemUpdateModal">
+  <ion-card>
+    <img [src]="lineItem.variant.image.src" margin-top />
+    <div class="ItemUpdateModal__item-info" padding>
+      <h2>{{ lineItem.title }}</h2>
+      <h3>{{ lineItem.variant.title }}</h3>
+    </div>
+    
+    <ion-list>
+
+      <ion-item class="ItemUpdateModal__quantity">
+        <span item-left>Quantity</span>
+        <div item-right>
+          <button ion-button outline small color="dark" (click)="decrementQty()">
+            <ion-icon name="remove"></ion-icon>
+          </button>
+          <span class="ItemUpdateModal__quantity-value">{{ lineItem.quantity }}</span>
+          <button ion-button outline small color="dark" (click)="incrementQty()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <span item-left>Remove from cart</span>
+        <button float-right outline ion-button small color="dark" (click)="removeItem()">
+          remove
+        </button>
+      </ion-item>
+    </ion-list>
+
+    <div class="ItemUpdateModal__action-buttons" padding>
+      <button ion-button block color="dark" (click)="update()">Ok</button>
+      <button ion-button block outline color="dark" (click)="cancel()"> Cancel</button>
+    </div>
+    
+  </ion-card>
+</ion-content>

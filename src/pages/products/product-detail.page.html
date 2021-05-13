@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ product.title | ellipses:15 }}</ion-title>
+    <ion-buttons end margin-right>
+      <button class="CartButton__button" ion-button icon-only (click)="goCheckout()">
+        <span class="CartButton__count-badge">{{ shopify.cartItemCount$ | async }}</span>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="ProductDetailPage">
+  <ion-card>
+    <img [src]="product.images[0].src" margin-top margin-bottom>
+    <div class="ProductDetailPage__options">
+      <button color="dark" ion-button clear 
+              *ngFor="let variant of product.variants" 
+              [ngClass]="{'selected-variant': variant === selectedVariant}"
+              (click)="selectVariant(variant)">
+        {{ variant.selectedOptions[0].value | clothingSize }}
+      </button>
+    </div>
+    <h2 class="ProductDetailPage__price">{{ selectedVariant.price | currency }}</h2>
+    <div class="ProductDetailPage__cart-button" padding>
+      <button ion-button ion-left block outline color="dark" (click)="addToCart()">
+        Add to Cart
+      </button>
+    </div>
+    <div class="ProductDetailPage__info">
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.description }}</p>
+    </div>
+  </ion-card>
+</ion-content>

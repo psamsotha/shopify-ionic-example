@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="CartPage">
+
+  <ion-list *ngIf="cart" class="CartPage__item-list">
+    <p *ngIf="cart.lineItems.length == 0">
+      No items in cart
+    </p>
+    <ion-item *ngFor="let item of cart.lineItems" class="CartPage__line-item">
+      <ion-thumbnail item-start>
+        <img [src]="item.variant.image ? item.variant.image.src : item.customAttributes[0].value" />
+      </ion-thumbnail>
+      <h3>{{ item.title | ellipses:16 }}</h3>
+      <h4 *ngIf="item.variant.title !== 'Default Title'">{{ item.variant.title }}</h4>
+      <p>Quantity: {{ item.quantity }}</p>
+      <div class="CartPage__line-item-right" item-end>
+        <span>{{ getTotal(item) | currency }}</span>
+        <button ion-button small color="dark" (click)="updateItem(item)">update</button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <div class="CartPage__action-buttons">
+    <div *ngIf="cart.lineItems.length > 0" ion-item class="CartPage__subtotal">
+      <span item-left>Subtotal</span>
+      <span item-right>{{ getTotal() | currency }}</span>
+    </div>
+    <button *ngIf="cart.lineItems.length > 0" ion-button block color="dark" (click)="checkout()">
+      Checkout
+    </button>
+    <button ion-button outline block color="dark" (click)="continueShopping()">
+      Continue Shopping
+    </button>
+    <button *ngIf="cart.lineItems.length > 0" ion-button outline block color="dark" (click)="clearCart()">
+      Clear Cart
+    </button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Blog</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let post of posts" (click)="openPost(post)">
+    <div class="BlogPage__header">
+      <img [src]="post.img" />
+      <div class="BlogPage__title" padding>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.date | date:'medium' }}</p>
+      </div>
+    </div>
+    <div padding class="BlogPage__post-content" class="blog-content" [innerHTML]="post.content | ellipses: 100">
+    </div>
+  </ion-card>
+</ion-content>

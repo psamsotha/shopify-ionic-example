@@ -1,0 +1,39 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="Menu__logo">
+      <img src="./assets/img/sw-logo.png" />
+      <div class="Menu__card-title">Stay Winning</div>
+    </div>
+
+    <ion-list>
+      <ion-list-header>
+        Navigate
+      </ion-list-header>
+      <button menuClose ion-item *ngFor="let page of appPages" (click)="openPage(page)">
+        <ion-icon item-start [name]="page.icon"></ion-icon>
+        {{page.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        Getting Started
+      </ion-list-header>
+      <button ion-item menuClose (click)="openIntro()">
+        <ion-icon item-start name="information-circle"></ion-icon>
+        Show Intro
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
